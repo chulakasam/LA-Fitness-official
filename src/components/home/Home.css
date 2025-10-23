@@ -1,0 +1,100 @@
+/* --- Base Layout --- */
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* --- Overlay (Dark → Light Gradient) --- */
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+          to bottom right,
+          rgba(0, 0, 0, 0.7) 10%,   /* top-left dark */
+          rgba(0, 0, 0, 0.4) 40%,   /* middle soft */
+          rgba(255, 255, 255, 0.1) 100% /* bottom-right light tint */
+  );
+  z-index: 1;
+  pointer-events: none; /* ✅ allows clicks to pass through */
+}
+
+
+/* --- Content --- */
+.content {
+  max-width: 800px;
+  z-index: 2; /* Ensures content appears above overlay */
+  text-align: center;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #d1d5db;
+}
+
+/* --- Buttons --- */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #ff3131;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #ff3131;
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
