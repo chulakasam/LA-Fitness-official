@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from "./components/header/Header.tsx";
 import Home from "./components/home/Home.tsx";
 import About from "./components/about/About.tsx";
@@ -16,14 +16,26 @@ function App() {
       <div className="app">
         <Header />
         <main>
-          <Home />
-          {/* Add other page sections here */}
-            <About/>
-            <Services/>
-            <Transformations/>
-            <Team/>
-            <Contact/>
-          <Footer />
+          {/*<Home />*/}
+          {/*/!* Add other page sections here *!/*/}
+          {/*  <About/>*/}
+          {/*  <Services/>*/}
+          {/*  <Transformations/>*/}
+          {/*  <Team/>*/}
+          {/*  <Contact/>*/}
+          {/*<Footer />*/}
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/trainers" element={<Transformations />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/footer" element={<Footer />} />
+            {/* Add a catch-all route for 404 pages */}
+            <Route path="*" element={<Home />} />
+          </Routes>
         </main>
 
       </div>

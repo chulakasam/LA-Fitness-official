@@ -1,5 +1,7 @@
 /* Services Section */
 .services-section {
+  height: 100vh;
+  width: 100vw;
   padding: 6rem 0;
   background-color: #f8f9fa;
   position: relative;

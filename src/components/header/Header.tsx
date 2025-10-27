@@ -39,10 +39,13 @@ const Header: React.FC = () => {
               <Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About</Link>
             </li>
             <li className="nav-item">
-              <Link to="/classes" className="nav-link" onClick={() => setIsMenuOpen(false)}>Classes</Link>
+              <Link to="/services" className="nav-link" onClick={() => setIsMenuOpen(false)}>Service</Link>
             </li>
             <li className="nav-item">
-              <Link to="/trainers" className="nav-link" onClick={() => setIsMenuOpen(false)}>Trainers</Link>
+              <Link to="/trainers" className="nav-link" onClick={() => setIsMenuOpen(false)}>Transformation</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/team" className="nav-link" onClick={() => setIsMenuOpen(false)}>Team</Link>
             </li>
             <li className="nav-item">
               <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
