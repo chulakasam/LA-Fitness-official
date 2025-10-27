@@ -495,10 +495,10 @@
   .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -110%;
     width: 80%;
-    max-width: 350px;
-    height: 100vh;
+    max-width: 250px;
+    height: 50vh;
     background-color: #0f0f0f;
     flex-direction: column;
     justify-content: flex-start;
