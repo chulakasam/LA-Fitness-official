@@ -12,24 +12,24 @@ const About: React.FC = () => {
               Your journey to a healthier lifestyle starts here at LA Fitness, where fitness meets community.
             </p>
             <p>
-              Founded with a vision to transform lives through fitness, LA Fitness has been a trusted name in the industry for over 30 years. 
+              Founded with a vision to transform lives through fitness, LA Fitness has been a trusted name in the industry for over 3 years.
               Our state-of-the-art facilities and expert trainers are dedicated to helping you achieve your fitness goals.
             </p>
             <div className="stats-grid">
               <div className="stat-item">
-                <span className="stat-number">30+</span>
+                <span className="stat-number">3+</span>
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">700+</span>
-                <span className="stat-label">Fitness Classes</span>
+                <span className="stat-number">5+</span>
+                <span className="stat-label">Fitness Categories</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">1M+</span>
+                <span className="stat-number">100+</span>
                 <span className="stat-label">Members Served</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">500+</span>
+                <span className="stat-number">3+</span>
                 <span className="stat-label">Certified Trainers</span>
               </div>
             </div>
