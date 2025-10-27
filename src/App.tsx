@@ -1,45 +1,47 @@
 
 import './App.css';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { Element } from 'react-scroll';
 import Header from "./components/header/Header.tsx";
 import Home from "./components/home/Home.tsx";
 import About from "./components/about/About.tsx";
 import Services from "./components/services/Services.tsx";
 import Transformations from "./components/transformations/Transformations.tsx";
 import Team from "./components/team/Team.tsx";
-  import Contact from "./components/contact/Contact.tsx";
+import Contact from "./components/contact/Contact.tsx";
 import Footer from "./components/footer/Footer.tsx";
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <main>
-          {/*<Home />*/}
-          {/*/!* Add other page sections here *!/*/}
-          {/*  <About/>*/}
-          {/*  <Services/>*/}
-          {/*  <Transformations/>*/}
-          {/*  <Team/>*/}
-          {/*  <Contact/>*/}
-          {/*<Footer />*/}
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/trainers" element={<Transformations />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/footer" element={<Footer />} />
-            {/* Add a catch-all route for 404 pages */}
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </main>
-
-      </div>
-    </Router>
+    <div className="app">
+      <Header />
+      <main>
+        <Element name="home" className="section">
+          <Home />
+        </Element>
+        
+        <Element name="about" className="section">
+          <About />
+        </Element>
+        
+        <Element name="services" className="section">
+          <Services />
+        </Element>
+        
+        <Element name="transformations" className="section">
+          <Transformations />
+        </Element>
+        
+        <Element name="team" className="section">
+          <Team />
+        </Element>
+        
+        <Element name="contact" className="section">
+          <Contact />
+        </Element>
+        
+        <Footer />
+      </main>
+    </div>
   );
 }
 

@@ -1,53 +1,63 @@
 /* Contact Section */
 .contact-section {
-  height: 100vh;
   width: 100vw;
-  padding: 6rem 0;
+  padding: 4rem 0;
   background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .contact-section .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 .contact-section .section-title {
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
   color: #1a1a1a;
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .contact-section .section-subtitle {
   text-align: center;
   color: #666;
-  margin-bottom: 3rem;
-  font-size: 1.2rem;
+  margin: 0 auto 3rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  max-width: 700px;
+  line-height: 1.6;
 }
 
 .contact-container {
   display: flex;
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 2rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contact-info {
   flex: 1;
   min-width: 300px;
+  max-width: 500px;
 }
 
 .info-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   background: #fff;
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .info-item:hover {
@@ -60,113 +70,202 @@
   color: white;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   margin-right: 1.5rem;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+  transform: rotate(5deg) scale(1.1);
 }
 
 .info-content h3 {
   color: #1a1a1a;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .info-content p {
   color: #666;
-  margin: 0.3rem 0;
-  font-size: 1rem;
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
 .contact-form {
   flex: 1;
   min-width: 300px;
+  max-width: 600px;
   background: #fff;
-  padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  width: 90%;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
   font-family: inherit;
+  background-color: #f9f9f9;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: #ff3131;
-  box-shadow: 0 0 0 2px rgba(255, 49, 49, 0.2);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 49, 49, 0.1);
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
 }
 
 .btn-primary {
   background-color: #ff3131;
   color: white;
   border: none;
-  padding: 0.8rem 2rem;
-  border-radius: 40px;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  width: 30%;
+  width: 60%;
   display: block;
-  /*margin: 0 auto;*/
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary:hover {
   background-color: #e02a2a;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 49, 49, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 49, 49, 0.3);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Responsive Breakpoints */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
   .contact-container {
-    flex-direction: column;
+    gap: 1.5rem;
   }
-  
+
   .contact-info,
   .contact-form {
-    width: 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
   }
-  
+
+  .info-item {
+    padding: 1.25rem;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 1.5rem;
+  }
+}
+
+/* Small Tablets (576px - 768px) */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 0;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+
+  .info-item {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
+
+  .info-icon {
+    margin: 0 1rem 0 0;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
   .info-item {
     flex-direction: column;
     text-align: center;
+    padding: 1.5rem 1rem;
   }
-  
+
   .info-icon {
     margin: 0 auto 1rem;
   }
-  
+
+  .info-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-content p {
+    font-size: 0.9rem;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
   .btn-primary {
-    width: 100%;
+    padding: 0.9rem;
+    font-size: 0.95rem;
   }
 }
 
-/* Animation */
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -178,6 +277,24 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .contact-form {
   animation: fadeInUp 0.6s ease-out;
 }
+
+.contact-info {
+  animation: fadeIn 0.6s ease-out 0.1s both;
+}
+
+/* Add delay for each info item */
+.info-item:nth-child(1) { animation: fadeIn 0.5s ease-out 0.2s both; }
+.info-item:nth-child(2) { animation: fadeIn 0.5s ease-out 0.3s both; }
+.info-item:nth-child(3) { animation: fadeIn 0.5s ease-out 0.4s both; }

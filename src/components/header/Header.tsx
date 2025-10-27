@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import './Header.css';
 
 const Header: React.FC = () => {
@@ -23,37 +23,139 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="header-container">
         <div className="logo">
-          <Link to="/">LA Fitness</Link>
+          <Link 
+            to="home" 
+            spy={true} 
+            smooth={true} 
+            duration={500} 
+            offset={-100}
+            className="nav-link"
+            onClick={closeMenu}
+          >
+            LA Fitness
+          </Link>
         </div>
         
         <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <ul className="nav-list">
             <li className="nav-item">
-              <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <Link 
+                to="home" 
+                spy={true} 
+                smooth={true} 
+                offset={-100} 
+                duration={500} 
+                className="nav-link" 
+                activeClass="active"
+                onClick={closeMenu}
+              >
+                Home
+              </Link>
             </li>
             <li className="nav-item">
-              <Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About</Link>
+              <Link 
+                to="about" 
+                spy={true} 
+                smooth={true} 
+                offset={-80} 
+                duration={500} 
+                className="nav-link" 
+                activeClass="active"
+                onClick={closeMenu}
+              >
+                About
+              </Link>
             </li>
             <li className="nav-item">
-              <Link to="/services" className="nav-link" onClick={() => setIsMenuOpen(false)}>Service</Link>
+              <Link 
+                to="services" 
+                spy={true} 
+                smooth={true} 
+                offset={-80} 
+                duration={500} 
+                className="nav-link" 
+                activeClass="active"
+                onClick={closeMenu}
+              >
+                Services
+              </Link>
             </li>
             <li className="nav-item">
-              <Link to="/trainers" className="nav-link" onClick={() => setIsMenuOpen(false)}>Transformation</Link>
+              <Link 
+                to="transformations" 
+                spy={true} 
+                smooth={true} 
+                offset={-80} 
+                duration={500} 
+                className="nav-link" 
+                activeClass="active"
+                onClick={closeMenu}
+              >
+                Transformations
+              </Link>
             </li>
             <li className="nav-item">
-              <Link to="/team" className="nav-link" onClick={() => setIsMenuOpen(false)}>Team</Link>
+              <Link 
+                to="team" 
+                spy={true} 
+                smooth={true} 
+                offset={-80} 
+                duration={500} 
+                className="nav-link" 
+                activeClass="active"
+                onClick={closeMenu}
+              >
+                Team
+              </Link>
             </li>
             <li className="nav-item">
-              <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              <Link 
+                to="contact" 
+                spy={true} 
+                smooth={true} 
+                offset={-80}
+                duration={500} 
+                className="nav-link" 
+                activeClass="active"
+                onClick={closeMenu}
+              >
+                Contact
+              </Link>
             </li>
           </ul>
           <div className="cta-buttons">
-            <Link to="/join-now" className="btn btn-primary">Join Now</Link>
-            <Link to="/sign-in" className="btn btn-outline">Sign In</Link>
+            <Link 
+              to="contact" 
+              spy={true} 
+              smooth={true} 
+              offset={-80}
+              duration={500} 
+              className="btn btn-primary"
+              activeClass="active"
+              onClick={closeMenu}
+            >
+              Join Now
+            </Link>
+            <Link 
+              to="contact" 
+              spy={true} 
+              smooth={true} 
+              offset={-80}
+              duration={500} 
+              className="btn btn-outline"
+              activeClass="active"
+              onClick={closeMenu}
+            >
+              Sign In
+            </Link>
           </div>
         </nav>
 
